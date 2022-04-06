@@ -1,0 +1,74 @@
+1) How to add comments on css?
+    - simply place your plain text inside /* */ marks.
+
+2) Why do we use pseudo-class?
+    - A pseudo-class is used to define a special state of an element. 
+    - For example: it can be used to: Style an element when a user mouses over it. 
+                 : Style visited and unvisited links differently.
+
+3) How is specificity applied?
+    - Specificity is a weight that is applied to a given CSS declaration, determined by the number of each selector type in the matching selector. When multiple declarations have equal specificity, the last declaration found in the CSS is applied to the element.
+
+4) What method allows an element to be moved from its current position?
+    - position: static
+
+5) what properties does flex model have?
+    - The flex CSS shorthand property is the combination of flex-grow, flex-shrink, and flex-basis property. 
+    - It is used to set the length of flexible items. The flex property is much responsive and mobile-friendly. 
+    - It is easy to position child elements and the main container.
+
+6) What is the difference between flex and grids?
+    - Dimension: 
+        Grid: 2 Dimension
+        Flexbox: 1 Dimension
+    - Features:
+        Grid: Can flex combination of items through space-occupying Features
+        FLex: Can push content element to extreme alignment
+    - Support type: 
+        Grid: Layput first
+        Flex: Content first
+
+7) Give an example where we have to use grids and where you have to use flexbox?
+    - grids are used when we want to divide a page into major regions or defining the relationship in terms of size, position, and layer.
+    - flex makes it easier to design flexible responsive layout structure without using float or positioning.
+
+8) Give an example where you cannot use flexbox, and you can only use grids?
+    - tables
+
+9) What are combinators? give examples of how you can use them
+    - A combinator is something that explains the relationship between the selectors. A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.
+    - There are four different combinators in CSS:
+        1. descendant selector (space)
+        2. child selector (>)
+        3. adjacent sibling selector (+)
+        4. general sibling selector (~)
+10) What does object-fit do?
+    - The object-fit CSS property sets how the content of a replaced element, such as an <img> or <video> , should be resized to fit its container. You can alter the alignment of the replaced element's content object within the element's box using the object-position property.
+
+11) What does rotate do?
+    - rotate defines a transformation that rotates an element around a fixed point on the 2D plane, without deforming it.
+
+12) When working with attribute selectors, how can you select elements which contain a particular attribute value?
+    - using query selector
+13) What does @media do?
+    - @media helps us add responsiveness to our website as per mentioned screen sizes
+
+14) What can be used to override properties of an element
+    - we can use !important
+    - we can use id instead of class, as id has higher precedence
+
+15) How can you select every alternate elements in a list of elements using css?
+    - by using the nth child property
+
+16) What is the ranking of selectors with respect to specificity
+    - inline styling rank highest
+    - id selector
+    - class selector
+    - type selector
+    - universal selector
+
+17) how can we apply same styles to multiple selectors?
+    - by grouping them
+    - for eg div, p{ color: "red"}
+    so now all the div and p tags will have red color
+
