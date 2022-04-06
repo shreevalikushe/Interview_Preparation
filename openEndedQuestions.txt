@@ -1,0 +1,36 @@
+1) What are some new things happening in the web?
+    - Day by day there are many new technologies which are coming up and being extensively used in the market
+    - Earlier angular used to be the most used language to create front-end applications, however nowadays ReactJS has taken over by a very high percentile margin. Nowadays there is talk about Svelte.
+    - In svelte an application is composed of one or more components.
+    - In the recent times there is also a lot of research and innovations going on in artificial intelligence and bots.
+
+2) Explain a project that you have built?
+    - In my journey in masai school during the second last unit's construct week, my group of 4 was given the responsibilty to clone the e-commerce website Myntra in 7 days.
+    - The tech stack we used was ReactJS, ReduxJS, MaterialUI for styling and JSON Server to store data, we also deployed our database on heroku and our final application on vercel
+    - In the project I was responsible for integrating Redux throughtout the project, I also made all the products pages with sorting, filter options. 
+    - Alongside this the search feature for our app was built by me, and in the end the functionality of the cart working dynamically was constructed by me.
+    - Overall my team members and I tried to build an end to end e-commerce experience for our users.
+    - The user has to login, post which they can access all Routes, after clicking on one card, the user gets redirected to a single product page which showcases detailed info about the product,
+    here the user can either add the product to the cart or decide to add it to the wishlist, in the cart page the user can delete a particular product which they wish not to purchase. Once the order is placed the user is re-directed to the home page.
+
+3) Whats something exciting that you have built?
+    - Even when I was a child playing tic-tac-toe was a very good source of entertainment, when I was comfortable with the basics of React, I created my own mini game app for tic-tac-toe. It was very fun and helped me learn alot too. I have also deployed my app on netlify for others to check it out.
+
+4) What are you most excited about?
+    - Something which really keeps me excited is growth and change, I am a person who doesn't fit in well if the same monotonous task is assigned to me for the longest time, I like to learn and explore new things and options. 
+    The primary reason why I decided to build a career in tech is also because there is constant change and growth in this field. So any how you have to keep yourself updated with upcoming requirements, or you will be left behind.
+
+5) Why do coding standards matter? What are some patterns you follow?
+    - As a developer building an application it doesn't happen so that you are the only person working on the app/project. It is always a team effort, so by following coding standards you help create a good working environment for everyone, as the code is more readable/ understandable.
+    - On personal level following coding standards helps you debug bugs more easily. 
+    - Some things which I try to follow on a regular basis is: appropriate naming convention, splitting my code into multiple files whenever possible. I always try to make sure that in one page I havent written too many lines of code. I try to keep my functions small and precise.
+
+6) How do you go about managing responsive websites?
+    - Initially I create the website as per my screen size, I make sure everything is built in a pixel perfect manner.
+    - This bascially covers the sizing for laptop screen sizes, for mobile and tablets, I accordingly write media queries, try to adjust font-size, padding margin etc. this helps the webpage look nicer and in one format.
+
+7) What do you care about the most when you write software?
+    - Something which I am consciously aware about when I write code is that
+        1. My code should be easily readable to a third party
+        2. I am simplifying features as much as possible for the end user to use.
+        3. Scalability
