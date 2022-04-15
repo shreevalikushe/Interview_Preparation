@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./index.js"></script>
+  </head>
+  <style>
+    body {
+      padding: 2rem;
+      background-color: aqua;
+      color: blue;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <button btn-throttle>click throttle</button>
+    <p>
+      Check the console, no matter how many times you click the above button it
+      will only print after every 3000ms
+    </p>
+    <hr />
+    <h3>What are IIFE's?</h3>
+    <p>
+      <b>Ans:</b> IIFE's are immediately invoked function expression. So, when
+      you don't want to store the function in global scope and you only have to
+      execute a function once you use IIFE's.
+    </p>
+    <hr />
+    <h3>What is currying?</h3>
+    <p>
+      <b>Ans:</b> Currying is an advanced technique of working with functions,
+      it basically transforms the function calling from multiple argument
+      passing to a sequence of function with single argument.
+    </p>
+    <hr />
+    <h3>
+      Explain some areas where you have seen currying being implemented in React
+      / other libraries?
+    </h3>
+    <p>
+      <b>Ans:</b>
+      <li>
+        Examples of currying are (when clicking a button, the event passed is
+        using currying), (how we use props in react).
+      </li>
+      <li>
+        While using redux thunks also currying concept is used, as the action is
+        in a function format so from the outer function we pass args to the
+        inner function/action
+      </li>
+    </p>
+    <hr />
+    <p>
+      Click both the button to see that they both do the same thing but in a
+      different way.
+    </p>
+
+    <button with-currying>With currying</button>
+    <button without-currying>Without currying</button>
+    <hr />
+  </body>
+</html>
