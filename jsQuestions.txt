@@ -11,7 +11,7 @@
 =>              var             |               let             |           const
     - Global or function scope. | Block scope.                  | Block scope.
     - can be re-declared.       | can not be re-declared.       | can not be re-declared.
-    - can be re-assigned.       | can be re-assigned.           | can be re-assigned. 
+    - can be re-assigned.       | can be re-assigned.           | can't be re-assigned. 
 
 4) What are the two main differences in arrow functions?
 => Main difference in arrow functions:
