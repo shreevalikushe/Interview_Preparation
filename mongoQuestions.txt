@@ -1,0 +1,269 @@
+1. What is SQL Databases? 
+A. SQL is Structured Query Language, which is a computer language for storing, manipulating and retrieving data stored in a relational database.
+SQL is the standard language for Relational Database System. All the Relational Database Management Systems (RDMS) like MySQL, MS Access, Oracle, Sybase, Informix, Postgres and SQL Server use SQL as their standard database language.
+
+
+2. What is NoSQL Databases? What are some companies who uses Mongo, what type of applications are these?
+A. NoSQL databases (aka "not only SQL") are non-tabular databases and store data differently than relational tables. NoSQL databases come in a variety of types based on their data model. The main types are document, key-value, wide-column, and graph.
+Companies using Mongo are : IBM, Twitter, Zendesk, Forbes, Facebook, Google, Shutterfly, Intuit, Foursquare, SourceForge, The New York Times, Lexis Nexis
+MongoDB always preferred by the developers or project managers when our main concern is the deal with large volume of data with a high performance. If we want to insert thousands of records in a second, then MongoDB is the best choice for that. Also, horizontal scaling (adding new columns) is not so easy process in any RDBMS systems. But in case of MongoDB, it is very much easy since it is a schema less database. 
+MongoDB is good for the below types of situations :
+E-Commerce type of product-based applications
+Blog and Content Management systems
+High Speed logging, caching etc in the Real time
+Need to maintain location wise Geospatial data
+For maintains data related to the Social and Networking types
+If application is a loosely coupled mechanism – means design may change at any point of time.
+
+
+3. What is the difference between SQL and NoSQL databases?
+A. SQL	NoSQL
+RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS)	Non-relational or distributed database system.
+These databases have fixed or static or predefined schema	They have dynamic schema
+These databases are not suited for hierarchical data storage.	These databases are best suited for hierarchical data storage.
+These databases are best suited for complex queries	These databases are not so good for complex queries
+Vertically Scalable  	Horizontally scalable
+Follows ACID property	Follows CAP(consistency, availability, partition tolerance)
+
+
+4. What are some features of MongoDB?
+A. i. Support ad hoc queries
+In MongoDB, you can search by field, range query and it also supports regular expression searches.
+ii. Indexing
+You can index any field in a document.
+iii. Replication
+MongoDB supports Master Slave replication.
+A master can perform Reads and Writes and a Slave copies data from the master and can only be used for reads or back up (not writes)
+iv. Duplication of data
+MongoDB can run over multiple servers. The data is duplicated to keep the system up and also keep its running condition in case of hardware failure.
+v. Load balancing
+It has an automatic load balancing configuration because of data placed in shards.
+vi. Supports map reduce and aggregation tools.
+vii. Uses JavaScript instead of Procedures.
+viii. It is a schema-less database written in C++.
+ix. Provides high performance.
+x. Stores files of any size easily without complicating the stack
+
+
+5. What are aggregate queries?
+A. An aggregate query is a method of deriving group and subgroup data by analysis of a set of individual data entries. The term is frequently used by database developers and database administrators. An aggregate function in SQL performs a calculation on multiple values and returns a single value. SQL provides many aggregate functions that include avg, count, sum, min, max, etc. An aggregate function ignores NULL values when it performs the calculation, except for the count function.
+
+
+6. What are pipelines in aggregation?
+A. An aggregation pipeline consists of one or more stages that process documents: Each stage performs an operation on the input documents. For example, a stage can filter documents, group documents, and calculate values. The documents that are output from a stage are passed to the next stage.
+
+
+7. How do you do aggregate queries?
+A. Common Aggregate Queries:
+Compute the average value from a numeric sequence
+Count the number of elements in a sequence
+Count the number of records (entries) in a column or table
+Find the maximum value in a numeric sequence
+Find the minimum value in a numeric sequence
+Compute the sum of values in a numeric sequence
+Compute the standard deviation of a numeric sequence
+Select AVG(salary) from Employee
+Select COUNT(*) from Employee where Salary > 20000
+Select MAX(salary) from Employee
+Select STDDEV(salary) from Employee
+Select VARIANCE(salary) from Employee
+
+
+8. How can you group by a particular value in MongoDB?
+A. query = db.collection.aggregate([
+    { 
+      "$group": { "_id": "$your_field", #GROUP BY your_field
+    			"count": {"$sum":1} }   #COUNT(*)
+    },
+    { "$match": { "count": { "$gt": N } } } #HAVING COUNT(*) > N
+])
+
+
+9. How can you paginate on MongoDB?
+A. skips = page_size * (page_num - 1)
+   cursor = db['students'].find().skip(skips).limit(page_size)
+
+
+10. How can you sort in MongoDB?
+A. db.users.aggregate(
+   [
+     { $sort : { age : -1, posts: 1 } }
+   ]
+)
+db.users.find().sort({userId:-1})
+db.student.find().sort({age:1})
+
+
+11. What is indexing in MongoDB? Why do we need to use indexing? What are pros and cons for indexing?
+A. Indexing in MongoDB : 
+MongoDB uses indexing in order to make the query processing more efficient. If there is no indexing, then the MongoDB must scan every document in the collection and retrieve only those documents that match the query. Indexes are special data structures that stores some information related to the documents such that it becomes easy for MongoDB to find the right data file. The indexes are order by the value of the field specified in the index. 
+Creating an Index : 
+MongoDB provides a method called createIndex() that allows user to create an index. 
+Syntax – 
+db.COLLECTION_NAME.createIndex({KEY:1}) 
+
+
+12. Write the query for indexing a field in MongoDB?
+A. db.peaks.createIndex( { "height": 1 } )
+
+
+13. What is the improvement in performance in MongoDB?
+A. Ad hoc queries, indexing, and real time aggregation provide powerful ways to access data. MongoDB is a distributed database by default, which allows for expansive horizontal scalability without any changes to application logic.
+
+
+14. What is the data structure used for indexing?
+A. B-trees are the most commonly used data structures for indexes as they are time-efficient for lookups, deletions, and insertions. All these operations can be done in logarithmic time. Data that is stored inside of a B-tree can be sorted. Indexes that use hash tables are generally referred to as hash index.
+
+
+15. Are values sorted in indexes?
+A. When an index has a key with multiple data types, the index is sorted according to the BSON type sort order. If an index key contains an array, the document is sorted according to the type of the first array element.
+
+
+16. What are Replica Sets in MongoDB?
+A. A replica set in MongoDB is a group of mongod processes that maintain the same data set. Replica sets provide redundancy and high availability, and are the basis for all production deployments. With MongoDB, replication is achieved through a replica set. 
+
+
+17. Explain the structure of ObjectID in MongoDB.
+A. An ObjectId in MongoDB is a 12-byte BSON type. In the 12-byte structure, the first 4 bytes of the ObjectId represent the time in seconds since the UNIX epoch. The next 3 bytes of the ObjectId represent the machine identifier. The next 2 bytes of the ObjectId represent the process ID.
+
+
+18. By default, which index is created by MongoDB for every collection?
+A. MongoDB creates a unique index on the _id field during the creation of a collection. The _id index prevents clients from inserting two documents with the same value for the _id field.
+
+
+19. In which format MongoDB represents document structure?
+A. In MongoDB, data is stored as documents. These documents are stored in MongoDB in JSON (JavaScript Object Notation) format.
+
+
+20. What is the limitation of a document in MongoDB?
+A. The maximum BSON document size is 16 megabytes.
+The maximum document size helps ensure that a single document cannot use excessive amount of RAM or, during transmission, excessive amount of bandwidth. To store documents larger than the maximum size, MongoDB provides the GridFS API. 
+
+
+21. What is the difference between MongoDB and Redis database?
+A. 	Redis	MongoDB
+i.	It was developed by Redis labs and initially released on May 10, 2009.	It was developed by MongoDB Inc. and initially released on 11 February, 2009.
+ii.	Redis is written in ANSI and C languages.	MongoDB is written in C++, Go, JavaScript and Python languages.
+iii.	The primary database model for Redis is Key-Value Store.	The primary database model for MongoDB is Document Store.
+iv.	Redis supports secondary indexes with RediSearch module only.	MongoDB supports secondary indexes without any restrictions.
+v.	The Server-side scripting in Redis is through Lua.	The Server-side scripting in MongoDB is through JavaScript.
+vi.	Redis supports both Master-Slave Replication and Master-Master Replication.	MongoDB supports only Master-Slave Replication.
+vii.	Redis does not support Map Reduce method.	MongoDB supports Map Reduce method.
+
+
+22. How can you add references between multiple collections?
+A. DBRefs are references from one document to another using the value of the first document's _id field, collection name, and, optionally, its database name, as well as any other fields. DBRefs allow us to more easily reference documents stored in multiple collections or databases.
+To resolve DBRefs, our application must perform additional queries to return the referenced documents.
+{ "$ref" : <value>, "$id" : <value>, "$db" : <value> }
+
+
+23. What are lookup in aggregation for MongoDB?
+A. The $lookup operator is an aggregation operator or an aggregation stage, which is used to join a document from one collection to a document of another collection of the same database based on some queries. Both the collections should belong to the same databases.
+{
+    $lookup:
+    {
+        from: < "from collection" >,
+        localField: < any field from "input collection" >,
+        foreignField: < any field from "from collection" >,
+        as: < attached array field >
+    }
+}
+
+
+24. What are graph lookups?
+A. Performs a recursive search on a collection, with options for restricting the search by recursion depth and query filter.
+{
+   $graphLookup: {
+      from: <collection>,
+      startWith: <expression>,
+      connectFromField: <string>,
+      connectToField: <string>,
+      as: <string>,
+      maxDepth: <number>,
+      depthField: <string>,
+      restrictSearchWithMatch: <document>
+   }
+}
+
+
+25. What is the alternative for lookups in MongoDB?
+
+
+26. How can you do one to many relation in MongoDB?
+A. {
+   name: "O'Reilly Media",
+   founded: 1980,
+   location: "CA",
+   books: [123456789, 234567890, ...]
+}
+{
+    _id: 123456789,
+    title: "MongoDB: The Definitive Guide",
+    author: [ "Kristina Chodorow", "Mike Dirolf" ],
+    published_date: ISODate("2010-09-24"),
+    pages: 216,
+    language: "English"
+}
+{
+   _id: 234567890,
+   title: "50 Tips and Tricks for MongoDB Developer",
+   author: "Kristina Chodorow",
+   published_date: ISODate("2011-05-06"),
+   pages: 68,
+   language: "English"
+}
+
+
+27. How can you do many to many relation in MongoDB?
+A. // Tags
+// tagA: [Tut #1, Tut #2]
+{
+  _id: "5db57a03faf1f8434098ab01",
+  name: "tagA",
+  slug: "tag-a",
+  tutorials: [ "5db579f5faf1f8434098f123", "5db579f5faf1f8434098f456" ]
+}
+// tagB: [Tut #1]
+{
+  _id: "5db57a04faf1f8434098ab02",
+  name: "tagB",
+  slug: "tag-b",
+  tutorials: [ "5db579f5faf1f8434098f123" ]
+}
+// Tutorial
+// Tut #1: [tagA, tagB]
+{
+  _id: "5db579f5faf1f8434098f123"
+  title: "Tut #1",
+  author: "bezkoder"
+  tags: [ "5db57a03faf1f8434098ab01", "5db57a04faf1f8434098ab02" ],
+}
+// Tut #2: [tagA]
+{
+  _id: "5db579f5faf1f8434098f456"
+  title: "Tut #2",
+  author: "zkoder"
+  tags: [ "5db57a03faf1f8434098ab01" ],
+}
+
+
+28. How can you do one to zillion relation in MongoDB?
+A. An example of “one-to-zillion might be an event logging system that collects log messages for different machines. Any given host could generate enough messages to overflow the 16 MB document size, even if all we stored in the array was the ObjectID. This is the classic use case for “parent-referencing” – we would have a document for the host, and then store the ObjectID of the host in the documents for the log messages.
+> db.hosts.findOne()
+{
+    _id : ObjectID('AAAB'),
+    name : 'goofy.example.com',
+    ipaddr : '127.66.66.66'
+}
+>db.logmsg.findOne()
+{
+    time : ISODate("2014-03-28T09:42:41.382Z"),
+    message : 'cpu is on fire!',
+    host: ObjectID('AAAB')       // Reference to the Host document
+}
+We would use a (slightly different) application-level join to find the most recent 5,000 messages for a host:
+
+  // find the parent ‘host’ document
+> host = db.hosts.findOne({ipaddr : '127.66.66.66'});  // assumes unique index
+   // find the most recent 5000 log message documents linked to that host
+> last_5k_msg = db.logmsg.find({host: host._id}).sort({time : -1}).limit(5000).toArray()
